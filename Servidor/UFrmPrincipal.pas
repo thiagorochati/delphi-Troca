@@ -22,7 +22,6 @@ type
     FDConnection1: TFDConnection;
     Button1: TButton;
     QDados: TFDQuery;
-    Button2: TButton;
     procedure FormShow(Sender: TObject);
     procedure Button1Click(Sender: TObject);
   private
@@ -57,13 +56,18 @@ begin
              '       t.titulo, ' +
              '       t.descricao, ' +
              '       t.id_categoria, ' +
-             '       c.nome as nome_categoria, ' +
+             '       c.nome as nomecategoria, ' +
              '       t.id_condicao, ' +
-             '       o.nome as nome_condicao, ' +
+             '       o.nome as nomecondicao, ' +
              '       t.data, ' +
+             '       t.id_usuario, ' +
+             '       u.nome as nomeusuario, ' +
+             '       u.cidade, ' +
+             '       u.estado, ' +
              '       (select count(*) from troca_foto f where f.id_troca = t.id_troca) qtd_foto ' +
              'from troca t join categoria c on t.id_categoria = c.id_categoria ' +
              '           join condicao o on t.id_condicao = o.id_condicao ' +
+             '           join usuario u on t.id_usuario = u.id_usuario ' +
              'order by t.data desc, titulo';
 
       QDados.Close;

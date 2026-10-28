@@ -20,7 +20,7 @@ type
     LbNome: TLabel;
     Image1: TImage;
     LbCidade: TLabel;
-    Rectangle5: TRectangle;
+    RecInteresse: TRectangle;
     Label7: TLabel;
     Image2: TImage;
   private

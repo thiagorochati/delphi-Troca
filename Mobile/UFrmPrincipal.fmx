@@ -1,0 +1,154 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 584
+  ClientWidth = 548
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+  object TabControl1: TTabControl
+    Align = Client
+    Size.Width = 548.000000000000000000
+    Size.Height = 584.000000000000000000
+    Size.PlatformDefault = False
+    TabIndex = 1
+    TabOrder = 1
+    TabPosition = PlatformDefault
+    Sizes = (
+      548s
+      558s
+      548s
+      558s)
+    object TabItem1: TTabItem
+      CustomIcon = <
+        item
+        end>
+      TextSettings.Trimming = None
+      IsSelected = False
+      Size.Width = 69.000000000000000000
+      Size.Height = 26.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'TabItem1'
+      ExplicitSize.cx = 69.000000000000000000
+      ExplicitSize.cy = 26.000000000000000000
+    end
+    object TabItem2: TTabItem
+      CustomIcon = <
+        item
+        end>
+      TextSettings.Trimming = None
+      IsSelected = True
+      Size.Width = 69.000000000000000000
+      Size.Height = 26.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'TabItem2'
+      ExplicitSize.cx = 69.000000000000000000
+      ExplicitSize.cy = 26.000000000000000000
+      object Layout1: TLayout
+        Align = Top
+        Size.Width = 548.000000000000000000
+        Size.Height = 44.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        object Label1: TLabel
+          StyledSettings = []
+          Position.X = 20.000000000000000000
+          Position.Y = 15.000000000000000000
+          TextSettings.Font.Family = 'Century Gothic'
+          TextSettings.Font.Size = 20.000000000000000000
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+          TextSettings.FontColor = xFF039204
+          Text = 'DeL'#225'PraC'#225
+          TabOrder = 0
+        end
+      end
+      object Layout2: TLayout
+        Align = Top
+        Position.Y = 44.000000000000000000
+        Size.Width = 548.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        object Rectangle1: TRectangle
+          Align = Client
+          Fill.Color = claWhitesmoke
+          Margins.Left = 20.000000000000000000
+          Margins.Top = 4.000000000000000000
+          Margins.Right = 20.000000000000000000
+          Margins.Bottom = 4.000000000000000000
+          Size.Width = 508.000000000000000000
+          Size.Height = 42.000000000000000000
+          Size.PlatformDefault = False
+          Stroke.Color = xFFD5D5D5
+          XRadius = 20.000000000000000000
+          YRadius = 20.000000000000000000
+          object Image1: TImage
+            MultiResBitmap.Height = 24
+            MultiResBitmap.Width = 24
+            MultiResBitmap = <
+              item
+                Width = 24
+                Height = 24
+                PNG = {
+                  89504E470D0A1A0A0000000D4948445200000018000000180806000000E0773D
+                  F80000000473424954080808087C0864880000028F494441544889B5D44D4854
+                  5118C6F1FF7BCE559B3B36960D5994AD6A1BD8AEB05DA4F4819B84402873AC40
+                  22245A5984654405418BA09CFC6811B668112AB5A908DA04118E0545D0264A8A
+                  C056C38C3A33F7BC2D748470C68FC99ED585FB9EE7C7E1725FF8CF91A26F3AA8
+                  0C656CA3280D28B50811E017AAE3A81D4D0F66C74A03BA31A1097346542E0251
+                  D0F78A7C12480335C06E20AAF0D2883D97EACB7C583ED041A53F6387800340DC
+                  D9E0FA749C6F7FCD3463FD886D04BD86C80E85D8545FF0686960F6E030502F22
+                  CDA9BEDCF345EFDE4CB91FB17781E34053BA3F785A68CCE41FC255A613681095
+                  234B96033C2693AE0D4E02C3C0C3B5A7881605AA5B88A8CA0594DED440EEC592
+                  E5F974E3AC0D4E03B8C0EB2A0ACC54D8C3C03AD5E0C6B2CBE7928C33A922F755
+                  B585666C4140857D8826A606F9BE5200401D23081BFD48D9CEC280B24D54BE94
+                  520E604D6EF6ACB86D050111CA1D644A05CA72CC00A8A3A230003F81ADA50259
+                  CA6B0114F9511070E81B813DD136D6962478B9FDC0F4B4975BB03E66BF41E09E
+                  005E0AD3BAE2F26E3CA7E624F08C38E982C0F403BE02032272297482DA95F487
+                  27CC79417788313D85DECFFFC9D6065D40528C190DB753B39CF250CC1E5595AB
+                  88F4A4EE67C717059271268D0B0E816C50B5EFFC76DB54AC3812A33A1CF36E0B
+                  0C0116753F8BCD2E58D7E15636A9B57DC041D08F604644F5B383A4886E16957A
+                  150E025645BB04D98E7206D58EF480BBB72490CF9A766FAF513D0634005BE66E
+                  9B0112888E5AE37A9371260109C7BC5B8A762A7A76AADFDD29D6593CDD78EB4F
+                  51B5D848A8DDBBE9C7AC0BB599CE9503CB8CDFE65DF16356FD3633BF59176CBF
+                  7F4936E15E95D5598B70D9DB25BF73097DBBAA401EF1EA24298648764C5FAF76
+                  FF82FC01B931E91895FA49D20000000049454E44AE426082}
+                FileName = 'C:\Users\Thiago\Downloads\search-interface-symbol.png'
+              end>
+            Align = Left
+            Size.Width = 50.000000000000000000
+            Size.Height = 42.000000000000000000
+            Size.PlatformDefault = False
+            WrapMode = Center
+            OnClick = Image1Click
+          end
+          object Edit1: TEdit
+            Touch.InteractiveGestures = [LongTap, DoubleTap]
+            Align = Client
+            StyleLookup = 'transparentedit'
+            TabOrder = 1
+            Size.Width = 458.000000000000000000
+            Size.Height = 42.000000000000000000
+            Size.PlatformDefault = False
+            TextPrompt = 'O que voc'#234' procura para trocar ?'
+          end
+        end
+      end
+      object VertScrollBoxTroca: TVertScrollBox
+        Align = Client
+        Size.Width = 548.000000000000000000
+        Size.Height = 464.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 2
+        Viewport.Width = 548.000000000000000000
+        Viewport.Height = 464.000000000000000000
+      end
+    end
+  end
+end

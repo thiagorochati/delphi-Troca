@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2026/07/30 09:54:33.000.811,=C:\Users\Thiago\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2026/09/02 20:13:49.000.638,=C:\Users\Thiago\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2026/09/02 20:15:49.000.933,C:\Users\Thiago\Documents\Embarcadero\Studio\Projects\Unit1.fmx=D:\Projetos\Troca\Mobile\UFrmPrincipal.fmx</Transaction>
+    <Transaction>2026/09/02 20:15:49.000.933,C:\Users\Thiago\Documents\Embarcadero\Studio\Projects\Unit1.pas=D:\Projetos\Troca\Mobile\UFrmPrincipal.pas</Transaction>
+    <Transaction>2026/09/02 20:16:56.000.144,C:\Users\Thiago\Documents\Embarcadero\Studio\Projects\Project1.dproj=D:\Projetos\Troca\Mobile\AppTroca.dproj</Transaction>
+    <Transaction>2026/09/02 20:26:45.000.738,=D:\Projetos\Troca\Mobile\Unit1.pas</Transaction>
+    <Transaction>2026/09/02 20:28:57.000.789,D:\Projetos\Troca\Mobile\Unit1.fmx=D:\Projetos\Troca\Mobile\UFrameTroca.fmx</Transaction>
+    <Transaction>2026/09/02 20:28:57.000.789,D:\Projetos\Troca\Mobile\Unit1.pas=D:\Projetos\Troca\Mobile\UFrameTroca.pas</Transaction>
+  </Transactions>
+</BorlandProject>

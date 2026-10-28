@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DeLáPraCá - Detalhes & Chat</title>
+  <style>
+    :root {
+      --brand-green: #059669;
+      --brand-green-dark: #047857;
+      --action-orange: #f97316;
+      --bg-light: #f8fafc;
+      --text-dark: #0f172a;
+      --text-muted: #64748b;
+      --card-bg: #ffffff;
+      --border-color: #e2e8f0;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #1e293b;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+
+    /* Container Simulação Celular */
+    .phone-mockup {
+      width: 375px;
+      height: 750px;
+      background-color: var(--bg-light);
+      border-radius: 36px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+      border: 10px solid #0f172a;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Top Bar com Botão Voltar e Título */
+    .app-header {
+      background-color: var(--card-bg);
+      padding: 14px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--border-color);
+      z-index: 10;
+    }
+
+    .btn-back {
+      background: none;
+      border: none;
+      font-size: 20px;
+      color: var(--text-dark);
+      cursor: pointer;
+    }
+
+    .header-title {
+      font-weight: 700;
+      font-size: 16px;
+      color: var(--text-dark);
+    }
+
+    .header-action {
+      width: 24px;
+    }
+
+    /* Área com Rolagem (Fotos + Detalhes + Chat) */
+    .content-scroll {
+      flex: 1;
+      overflow-y: auto;
+      padding-bottom: 16px;
+    }
+
+    /* Galeria de Fotos (Carrossel Horizontal) */
+    .gallery-container {
+      position: relative;
+      width: 100%;
+      height: 220px;
+      background-color: #cbd5e1;
+    }
+
+    .gallery-scroll {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      height: 100%;
+      scrollbar-width: none; /* Firefox */
+    }
+
+    .gallery-scroll::-webkit-scrollbar {
+      display: none; /* Chrome/Safari */
+    }
+
+    .gallery-item {
+      flex: 0 0 100%;
+      scroll-snap-align: start;
+      height: 100%;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .photo-counter {
+      position: absolute;
+      bottom: 12px;
+      right: 12px;
+      background: rgba(15, 23, 42, 0.7);
+      color: #fff;
+      font-size: 11px;
+      padding: 4px 8px;
+      border-radius: 12px;
+      font-weight: 600;
+    }
+
+    .badge-group {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      display: flex;
+      gap: 6px;
+    }
+
+    .badge {
+      padding: 4px 10px;
+      border-radius: 12px;
+      font-size: 11px;
+      font-weight: 700;
+      color: #ffffff;
+      text-transform: uppercase;
+    }
+
+    .badge-category { background-color: var(--brand-green); }
+    .badge-condition { background-color: var(--action-orange); }
+
+    /* Bloco com Informações do Produto */
+    .product-info {
+      background-color: var(--card-bg);
+      padding: 16px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .product-title {
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--text-dark);
+      margin-bottom: 6px;
+    }
+
+    .product-meta {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .product-description {
+      font-size: 14px;
+      color: #334155;
+      line-height: 1.5;
+    }
+
+    /* Seção do Chat Integrado */
+    .chat-section {
+      padding: 16px;
+    }
+
+    .chat-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+
+    .chat-header h4 {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text-dark);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .chat-status {
+      font-size: 11px;
+      color: var(--brand-green);
+      font-weight: 600;
+    }
+
+    .chat-history {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .chat-bubble {
+      max-width: 80%;
+      padding: 10px 14px;
+      border-radius: 16px;
+      font-size: 13px;
+      line-height: 1.4;
+      position: relative;
+    }
+
+    /* Mensagem do Dono do Anúncio (Esquerda) */
+    .bubble-other {
+      align-self: flex-start;
+      background-color: #e2e8f0;
+      color: var(--text-dark);
+      border-bottom-left-radius: 4px;
+    }
+
+    /* Mensagem Enviada pelo Usuário Logado (Direita) */
+    .bubble-me {
+      align-self: flex-end;
+      background-color: var(--brand-green);
+      color: #ffffff;
+      border-bottom-right-radius: 4px;
+    }
+
+    .bubble-time {
+      font-size: 10px;
+      margin-top: 4px;
+      opacity: 0.7;
+      text-align: right;
+    }
+
+    /* Input Fixo no Rodapé para Envio de Mensagem */
+    .chat-input-container {
+      background-color: var(--card-bg);
+      padding: 10px 12px;
+      border-top: 1px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .chat-input {
+      flex: 1;
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      padding: 10px 14px;
+      font-size: 13px;
+      outline: none;
+      background-color: var(--bg-light);
+    }
+
+    .chat-input:focus {
+      border-color: var(--brand-green);
+    }
+
+    .btn-send {
+      background-color: var(--action-orange);
+      color: #ffffff;
+      border: none;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="phone-mockup">
+    <!-- Header -->
+    <div class="app-header">
+      <button class="btn-back">←</button>
+      <span class="header-title">Detalhes da Troca</span>
+      <div class="header-action"></div>
+    </div>
+
+    <!-- Conteúdo com Rolagem -->
+    <div class="content-scroll">
+      
+      <!-- 1. Galeria de Fotos (troca_foto) -->
+      <div class="gallery-container">
+        <div class="badge-group">
+          <span class="badge badge-category">Games</span>
+          <span class="badge badge-condition">Usado - Excelente</span>
+        </div>
+        <div class="gallery-scroll">
+          <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1606813907291-d86efa9b94db?w=600&auto=format&fit=crop" alt="Foto 1 PS4">
+          </div>
+          <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1507457379470-08b800bebc67?w=600&auto=format&fit=crop" alt="Foto 2 Controle">
+          </div>
+        </div>
+        <div class="photo-counter">📷 1/3</div>
+      </div>
+
+      <!-- 2. Detalhes do Produto (troca / usuario) -->
+      <div class="product-info">
+        <h2 class="product-title">PlayStation 4 Slim</h2>
+        <div class="product-meta">
+          <span>👤 João Silva</span> • <span>📍 São Paulo, SP</span> • <span>🕒 Publicado em 20/08</span>
+        </div>
+        <p class="product-description">
+          PS4 Slim funcionando perfeitamente, acompanha controle original e cabos. Aceito trocas por notebooks ou itens de informática do meu interesse.
+        </p>
+      </div>
+
+      <!-- 3. Chat Integrado com o Anunciante (chat_troca) -->
+      <div class="chat-section">
+        <div class="chat-header">
+          <h4>Negociação com João</h4>
+          <span class="chat-status">● Negociação Aberta</span>
+        </div>
+
+        <div class="chat-history">
+          <!-- Mensagem Enviada pelo Usuário Logado -->
+          <div class="chat-bubble bubble-me">
+            Olá João! Aceita trocar por um Notebook Lenovo 8GB?
+            <div class="bubble-time">10:00</div>
+          </div>
+
+          <!-- Mensagem Recebida do Anunciante (João) -->
+          <div class="chat-bubble bubble-other">
+            Olá! Depende do modelo do notebook e do estado da bateria.
+            <div class="bubble-time">10:05</div>
+          </div>
+
+          <!-- Mensagem Enviada pelo Usuário Logado -->
+          <div class="chat-bubble bubble-me">
+            É um Ideapad com SSD de 256GB, bateria durando cerca de 3 horas.
+            <div class="bubble-time">10:08</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 4. Caixa de Envio de Mensagem Fixa na Base -->
+    <div class="chat-input-container">
+      <input type="text" class="chat-input" placeholder="Envie uma proposta de troca...">
+      <button class="btn-send">➤</button>
+    </div>
+
+  </div>
+
+</body>
+</html>
